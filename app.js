@@ -64,7 +64,7 @@ app.get('/barrage/:id', (req, res, next) => {
   });
 });
 
-app.delete('/barrage/:id', (req, res, next) => {
+app.delete('/barrage/jsongPW/:id', (req, res, next) => {
   const id = req.params.id;
   console.log('delete', id);
   // delete articles[id];
