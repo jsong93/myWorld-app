@@ -75,10 +75,19 @@ app.delete('/barrage/jsongPW/:id', (req, res, next) => {
 });
 
 app.post('/barrage', (req, res, next) => {
-  Barrage.create({ content: req.body.barrage }, (err, text) => {
-    if (err) return next(err);
-    res.send('OK');
-  });
+  // Barrage.addColumn(err => {
+  //   if (err) return next(err);
+  // });
+  Barrage.create(
+    {
+      time: new Date().toLocaleString(),
+      content: req.body.barrage
+    },
+    (err, text) => {
+      if (err) return next(err);
+      res.send('OK');
+    }
+  );
 });
 
 // app.listen(port, () => {
